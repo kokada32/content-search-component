@@ -1,0 +1,13 @@
+<input type="text" ng-model="selected" uib-typeahead="content as content.contentTitle for content in $ctrl.get($viewValue)" typeahead-loading="loadingContent" typeahead-no-results="noResults" class="form-control" typeahead-template-url="customTemplate.html" placeholder="Search for Content" typeahead-on-select="onSelect($model)" typeahead-editable="false" style="width:100%">
+<i ng-show="loadingContent" class="glyphicon glyphicon-refresh"></i>
+<div ng-show="noResults">
+    <i class="glyphicon glyphicon-remove"></i> No Results Found
+</div>
+
+
+<script type="text/ng-template" id="customTemplate.html">
+    <a>
+        <span><strong><u>Title</u>:</strong>{{match.model.contentTitle}}</span>
+        <span><strong><u>Contents</u>:</strong> {{match.model.contents}}</span>
+    </a>
+</script>
